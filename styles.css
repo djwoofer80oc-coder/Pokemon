@@ -1,0 +1,194 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #eee;
+  padding: 2rem 1rem 3rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 20px rgba(255, 203, 5, 0.4);
+}
+
+header h1 span {
+  color: #ffcb05;
+}
+
+header p {
+  margin-top: 0.5rem;
+  opacity: 0.75;
+  font-size: 1rem;
+}
+
+.search-box {
+  max-width: 420px;
+  margin: 1.5rem auto 0;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 2px solid rgba(255, 203, 5, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.search-box input:focus {
+  border-color: #ffcb05;
+  box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.2);
+}
+
+.search-box svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.1rem;
+  height: 1.1rem;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem 1.25rem 1.25rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card.hidden {
+  display: none;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  margin-bottom: 0.5rem;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 12px;
+}
+
+.card-image img {
+  max-height: 120px;
+  max-width: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: transform 0.2s;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.card-header .number {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.card-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-description {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+  opacity: 0.6;
+  font-size: 1.1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.no-results.visible {
+  display: block;
+}
+
+/* Colores por tipo */
+.tipo-normal    { background: #a8a878; }
+.tipo-fuego     { background: #f08030; }
+.tipo-agua      { background: #6890f0; }
+.tipo-planta    { background: #78c850; }
+.tipo-electrico { background: #f8d030; color: #333; text-shadow: none; }
+.tipo-hielo     { background: #98d8d8; color: #333; text-shadow: none; }
+.tipo-lucha     { background: #c03028; }
+.tipo-veneno    { background: #a040a0; }
+.tipo-tierra    { background: #e0c068; color: #333; text-shadow: none; }
+.tipo-volador   { background: #a890f0; }
+.tipo-psiquico  { background: #f85888; }
+.tipo-bicho     { background: #a8b820; }
+.tipo-roca      { background: #b8a038; }
+.tipo-fantasma  { background: #705898; }
+.tipo-dragon    { background: #7038f8; }
+.tipo-siniestro { background: #705848; }
+.tipo-acero     { background: #b8b8d0; color: #333; text-shadow: none; }
+.tipo-hada      { background: #ee99ac; color: #333; text-shadow: none; }

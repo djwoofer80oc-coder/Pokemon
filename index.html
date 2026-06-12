@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex — 10 Pokémon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1><span>Pokédex</span></h1>
+    <p>Lista de 10 Pokémon con sus tipos</p>
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="M20 20l-4-4"/>
+      </svg>
+      <input type="search" id="buscador" placeholder="Buscar por nombre, tipo o descripción…" autocomplete="off">
+    </div>
+  </header>
+
+  <main class="grid" id="pokemon-list"></main>
+  <p class="no-results" id="no-results">No se encontró ningún Pokémon.</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
